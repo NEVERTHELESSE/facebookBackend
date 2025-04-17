@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 app.post("/user", async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  const addUser = await userModel.create({ email });
+  const addUser = await userModel.create({ email, password });
   res.status(200).send(addUser);
 });
 
